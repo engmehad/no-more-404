@@ -2,16 +2,38 @@
    No More 404 — script.js (متصل بـ Firebase عبر مجلد backend/)
    يُستخدم في index.html و login.html — لازم يُحمَّل كـ type="module"
    ========================================================== */
-import { monitorAuth, logout, registerWithEmail, loginWithEmail, getUserProfile } from "../backend/auth.js";
-import { getReports } from "../backend/database.js";
-import { prepareImage } from "../backend/images.js";
-import { getMyClaims } from "../backend/claims.js";
-import { searchReports } from "../backend/search.js";
+
 import {
-  addReportAndMatch, checkMatchesForMyReports, getMyNotificationsDetailed,
-  getUnreadCount, markAllAsRead, getMatchesForReport
-} from "../backend/matching.js";
-import { requestItem, getClaimsToReview, respondToClaim } from "../backend/claimsFlow.js";
+  monitorAuth,
+  logout,
+  registerWithEmail,
+  loginWithEmail,
+  getUserProfile
+} from "./backend/auth.js";
+
+import { getReports } from "./backend/database.js";
+
+import { prepareImage } from "./backend/images.js";
+
+import { getMyClaims } from "./backend/claims.js";
+
+import { searchReports } from "./backend/search.js";
+
+import {
+  addReportAndMatch,
+  checkMatchesForMyReports,
+  getMyNotificationsDetailed,
+  getUnreadCount,
+  markAllAsRead,
+  getMatchesForReport
+} from "./backend/matching.js";
+
+import {
+  requestItem,
+  getClaimsToReview,
+  respondToClaim
+} from "./backend/claimsFlow.js";
+
 
 const arErr = (e) => ({
   'auth/invalid-credential': 'البريد الإلكتروني أو كلمة المرور غير صحيحة.',
