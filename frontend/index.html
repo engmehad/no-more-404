@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No More 404 | منصة المفقودات والمعثورات الجامعية</title>
+  <meta name="description" content="منصة جامعية تفاعلية تساعد الطلاب على الإبلاغ عن الأغراض المفقودة والعثور على أصحاب الأغراض المعثور عليها.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#home" class="logo" data-nav aria-label="No More 404">
+        <svg class="logo__icon" viewBox="0 0 64 64" width="44" height="44" aria-hidden="true">
+          <rect width="64" height="64" rx="16" fill="#172B4D"/>
+          <path d="M40 40 L52 52" stroke="#B7C4D3" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="27" cy="27" r="16" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-width="5"/>
+          <path d="M27 16c-3.400 0-6 2.600-6 5.900 0 4.400 6 10 6 10s6-5.600 6-10c0-3.300-2.600-5.900-6-5.900z" fill="#F04438"/>
+          <circle cx="27" cy="21.900" r="2.300" fill="#fff"/>
+          <path d="M18 34 C 22 31, 27 38, 36 33" fill="none" stroke="#2E90FA" stroke-width="2.400" stroke-linecap="round"/>
+          <circle cx="36" cy="33" r="2" fill="#12B76A"/>
+        </svg>
+        <span class="logo__text">No More <b>404</b></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
+        <a href="#home" class="nav__link active" data-nav>الرئيسية</a>
+        <a href="#browse" class="nav__link" data-nav>استعراض الأغراض</a>
+        <a href="#add" class="nav__link" data-nav>إضافة بلاغ</a>
+        <a href="#about" class="nav__link" data-nav>عن الموقع</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="avatar" id="profileBtn" aria-label="حساب المستخدم" title="تسجيل الدخول">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7"/></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="hero__tag">منصة المفقودات والمعثورات الجامعية</span>
+          <h1>دليلك الآمن لكل ما فقدته في   <span class="hl">الحرم الجامعي</span>.<!--<br>كل غرض له طريق للعودة.--></h1>
+          <p>أضعت شيئاً في الحرم الجامعي؟ أو وجدت غرضاً لا يخصك؟ شارك بلاغك في ثوانٍ، وساعد زملاءك على استرجاع أغراضهم وتتبع حالة البلاغ لحظة بلحظة.</p>
+          <div class="hero__btns">
+            <a href="#browse" class="btn btn--primary" data-nav>استعرض المفقودات</a>
+            <a href="#add" class="btn btn--outline" data-nav>أضف بلاغاً</a>
+          </div>
+          <div class="hero__stats">
+            <div><strong id="statTotal">0</strong><span>بلاغ منشور</span></div>
+            <div><strong id="statLost">0</strong><span>مفقود</span></div>
+            <div><strong id="statFound">0</strong><span>معثور عليه</span></div>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+  <div class="lens">
+    <svg viewBox="0 0 400 400" class="lens__svg">
+      <!-- المقبض -->
+      <path d="M268 268 L352 352" stroke="#B7C4D3" stroke-width="34" stroke-linecap="round"/>
+      <path d="M300 300 L352 352" stroke="#172B4D" stroke-width="34" stroke-linecap="round"/>
+      <!-- العدسة -->
+      <circle cx="170" cy="170" r="132" fill="#fff" stroke="#172B4D" stroke-width="20"/>
+      <circle cx="170" cy="170" r="110" fill="#F7F9FC" stroke="#E4E9F0" stroke-width="2"/>
+      <path d="M92 118 A 92 92 0 0 1 150 84" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+      <!-- 404: الأول أحمر (مفقود) والأخير أخضر (معثور عليه) -->
+      <g font-family="Tajawal, sans-serif" font-weight="800" font-size="84" text-anchor="middle">
+        <text x="98"  y="198" fill="#D92D20">4</text>
+        <text x="170" y="198" fill="#172B4D">0</text>
+        <text x="242" y="198" fill="#039855">4</text>
+      </g>
+      <path d="M92 222 H248" stroke="#B7C4D3" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+    </svg>
+
+    <span class="ltag ltag--lost"  style="top:6%;  left:2%;">مفقود</span>
+    <span class="ltag ltag--found" style="top:14%; right:0;">معثور عليه</span>
+    <span class="ltag ltag--neutral" style="top:56%; left:-2%;">🔑 مفاتيح</span>
+    <span class="ltag ltag--neutral" style="top:66%; right:4%;">🎒 حقائب</span>
+    <span class="ltag ltag--neutral" style="bottom:2%; left:14%;">📱 إلكترونيات</span>
+    <span class="ltag ltag--neutral" style="top:-2%; left:42%;">🪪 بطاقات</span>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <!-- ===== Search & Filter ===== -->
+    <section class="section" id="browse">
+      <div class="container">
+        <div class="section__head">
+          <h2>استعراض الأغراض</h2>
+          <p>ابحث بالاسم أو الوصف، أو صفِّ النتائج حسب حالة البلاغ.</p>
+        </div>
+
+        <div class="search-box">
+          <div class="search-input">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input type="search" id="searchInput" placeholder="ابحث عن غرض… (مثال: حقيبة، مفاتيح، آيفون)" autocomplete="off">
+          </div>
+          <div class="filters" role="group" aria-label="تصفية حسب الحالة">
+            <button class="chip active" data-status="all">الكل</button>
+            <button class="chip chip--lost" data-status="lost">مفقود</button>
+            <button class="chip chip--found" data-status="found">معثور عليه</button>
+          </div>
+        </div>
+
+        <h3 class="sub-title">التصنيفات</h3>
+        <div class="categories" id="categories"></div>
+
+        <div class="latest-head">
+          <h3 class="sub-title">أحدث البلاغات</h3>
+          <span class="result-count" id="resultCount"></span>
+        </div>
+        <div class="grid" id="itemsGrid"></div>
+        <div class="empty" id="emptyState" hidden>
+          <div class="empty__icon">🔍</div>
+          <h4>لا توجد نتائج مطابقة</h4>
+          <p>جرّب كلمات بحث مختلفة أو غيّر التصنيف أو الحالة.</p>
+          <button class="btn btn--outline" id="resetFilters">إعادة ضبط التصفية</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Add Report ===== -->
+    <section class="section section--alt" id="add">
+      <div class="container">
+        <div class="section__head">
+          <h2>إضافة بلاغ</h2>
+          <p>املأ النموذج وسيظهر بلاغك مباشرة في قائمة أحدث البلاغات.</p>
+        </div>
+        <form class="card form" id="reportForm" novalidate>
+          <div class="notice" id="authNotice" hidden>
+            <span>🔒 سجّل دخولك أو أنشئ حساباً لتتمكن من نشر البلاغات.</span>
+            <span class="notice__btns">
+              <a class="btn btn--primary" href="login.html?mode=login&next=add">تسجيل الدخول</a>
+              <a class="btn btn--outline" href="login.html?mode=signup&next=add">إنشاء حساب</a>
+            </span>
+          </div>
+          <div class="seg" role="radiogroup" aria-label="نوع البلاغ">
+            <label class="seg__opt seg__opt--lost"><input type="radio" name="status" value="lost" checked><span>🔴 فقدت غرضاً</span></label>
+            <label class="seg__opt seg__opt--found"><input type="radio" name="status" value="found"><span>🟢 وجدت غرضاً</span></label>
+          </div>
+          <div class="form__grid">
+            <label class="field"><span>اسم الغرض *</span><input type="text" name="title" required maxlength="60" placeholder="مثال: محفظة جلدية سوداء"></label>
+            <label class="field"><span>التصنيف *</span><select name="category" id="formCategory" required></select></label>
+            <label class="field"><span>المكان *</span><input type="text" name="place" required maxlength="60" placeholder="مثال: مكتبة الكلية"></label>
+            <label class="field"><span>التاريخ *</span><input type="date" name="date" id="formDate" required></label>
+            <label class="field"><span>الوقت *</span><input type="time" name="time" id="formTime" required></label>
+            <label class="field"><span>صورة (اختياري)</span><input type="file" name="image" accept="image/*" id="formImage"></label>
+            <label class="field field--full"><span>الوصف</span><textarea name="desc" rows="3" maxlength="300" placeholder="اذكر مواصفات مميزة تساعد في التعرف على الغرض"></textarea></label>
+          </div>
+          <p class="form__error" id="formError" role="alert" hidden></p>
+          <button type="submit" class="btn btn--primary">نشر البلاغ</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== How it works / About ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2>طريقة العمل</h2>
+          <p>No More 404 منصة طلابية تجمع المفقودات والمعثورات في مكان واحد، لتسهّل التواصل وتسرّع الوصول إلى أصحابها.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step__num">1</div><h4>ابحث عن الغرض</h4><p>استخدم البحث والتصنيفات لمعرفة إن كان غرضك قد تم العثور عليه بالفعل.</p></div>
+          <div class="step"><div class="step__num">2</div><h4>أضف بلاغاً</h4><p>سجّل تفاصيل الغرض والمكان والوقت ليراه جميع طلاب الجامعة.</p></div>
+          <div class="step"><div class="step__num">3</div><h4>تواصل أو قدّم طلب استرجاع</h4><p>تواصل مع صاحب البلاغ أو أرسل طلب استرجاع وتابع حالته من حسابك.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="logo logo--light">
+          <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#fff"/>
+            <path d="M40 40 L52 52" stroke="#667085" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="27" cy="27" r="16" fill="#F7F9FC" stroke="#172B4D" stroke-width="5"/>
+            <path d="M27 16c-3.400 0-6 2.600-6 5.900 0 4.400 6 10 6 10s6-5.600 6-10c0-3.300-2.600-5.900-6-5.900z" fill="#F04438"/>
+            <circle cx="27" cy="21.900" r="2.300" fill="#fff"/>
+            <path d="M18 34 C 22 31, 27 38, 36 33" fill="none" stroke="#2E90FA" stroke-width="2.400" stroke-linecap="round"/>
+            <circle cx="36" cy="33" r="2" fill="#12B76A"/>
+          </svg>
+          <span class="logo__text">No More <b>404</b></span>
+        </div>
+        <p>منصة جامعية تفاعلية تربط بين من فقد غرضه ومن عثر عليه، بسرعة ووضوح وأمان.</p>
+      </div>
+      <div class="footer__links">
+        <h5>روابط سريعة</h5>
+        <a href="#home" data-nav>الرئيسية</a>
+        <a href="#browse" data-nav>استعراض الأغراض</a>
+        <a href="#add" data-nav>إضافة بلاغ</a>
+        <a href="#about" data-nav>عن الموقع</a>
+      </div>
+      <div class="footer__links">
+        <h5>تواصل معنا</h5>
+        <span>lostfound@university.edu</span>
+        <span>الأحد – الخميس | 8:00 ص – 4:00 م</span>
+      </div>
+    </div>
+    <div class="footer__bottom">© <span id="year"></span> No More 404 — جميع الحقوق محفوظة</div>
+  </footer>
+
+  <!-- ===== Item Details Modal ===== -->
+  <div class="modal" id="itemModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="itemModalTitle">
+      <button class="modal__close" data-close aria-label="إغلاق">×</button>
+      <div class="modal__body" id="itemModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ===== Profile Modal ===== -->
+  <div class="modal" id="profileModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+      <button class="modal__close" data-close aria-label="إغلاق">×</button>
+      <div class="modal__body" id="profileBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
